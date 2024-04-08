@@ -166,6 +166,15 @@ const dropDown = document.querySelectorAll('form select')
 const convertBtn = document.querySelector('button')
 const fromDropDown = document.querySelector('.from select')
 const toDropDown = document.querySelector('.to select')
+convertBtn.addEventListener('click', e => {
+    e.preventDefault()
+    getExchangeRate()
+})
+
+window.addEventListener('load', () => {
+    getExchangeRate()
+})
+
 const toCountry = toDropDown.value;
   getFlags(toDropDown, toCountry); // Pass both element and selected value
 
@@ -176,7 +185,7 @@ const currencyCodes = Object.keys(country_array);
 // creating dropdowns from the country object
 currencyCodes.forEach(function(currencyCode) {
   let country = country_array[currencyCode];
-  console.log("Currency Code:", currencyCode, "Country:", country);
+//   console.log("Currency Code:", currencyCode, "Country:", country);
   let option = document.createElement('option')
   option.value = currencyCode
   option.text = currencyCode;
@@ -199,6 +208,7 @@ fromDropDown.value = 'USD'
 toDropDown.value = 'KES'
 
 
+
 function getFlags (element){
     for (let code in country_array){
         if (code === element.value){
@@ -207,6 +217,40 @@ function getFlags (element){
         }
     }
 }
+
+
+
+function getExchangeRate (){
+    let amount = document.querySelector('form input')
+    let textSummary = document.querySelector('form .exchangerate')
+    let fromCurrency = fromDropDown.value
+    let toCurrency = toDropDown.value
+    console.log(fromCurrency)
+    let amountValue = amount.value
+
+    const baseURL = `https://open.er-api.com/v6/latest/${fromCurrency}`
+    console.log(baseURL)
+
+    if(amount.length != 0){
+        fetch(baseURL)
+        .then(res => res.json())
+        .then(data => {
+            let exchangeRate = data.rates[toCurrency]
+            let amountAfterConversion = (exchangeRate * amountValue).toFixed(2)
+
+            // Formatting the number with commas
+          amountAfterConversion = amountAfterConversion.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+            console.log(amountAfterConversion)
+
+            textSummary.innerText = `${amountValue} ${fromCurrency} = ${amountAfterConversion} ${toCurrency}`
+        })
+        .catch (() => {
+            textSummary.innerText = 'Error making conversion'
+        })
+    }
+}
+
 
 
 

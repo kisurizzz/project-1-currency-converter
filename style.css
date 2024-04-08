@@ -3,18 +3,22 @@
     font-family: 'poppins', sans-serif ;
     box-sizing: border-box;
 }
+
+:root{
+    --primary-color: #edf2fc;
+    --secondary-color: #212121;
+
+    background: #acb6e5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #86fde8, #acb6e5); 
+}
+
+
 body{
     display: grid;
     place-items: center;
     margin: 0;
     padding: 0 24px;
-    
-    background: #acb6e5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #86fde8, #acb6e5); 
-    
-    
-
     min-height: 100vh;
     min-width: max-content;
 }
@@ -108,8 +112,13 @@ form .droplist{
   }
 
   form .exchangerate{
-    font-size: 17px;
+    font-size: 20px;
     margin: 18px 0 20px;
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    background-color: beige;
+
   }
 
   form button{
@@ -119,8 +128,14 @@ form .droplist{
     cursor: pointer;
     background:orange;
     transition: 0.3s ease;
+    margin-top: 25px;
   }
 
   form button:hover{
     background: rgb(255, 106, 52);
+  }
+
+  #dmicon {
+    width: 25px;
+    cursor: pointer;
   }
