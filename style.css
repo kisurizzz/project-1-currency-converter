@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    font-family: 'poppins', sans-serif ;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0 24px;
+    
+    background: #acb6e5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #86fde8, #acb6e5); 
+    
+    
+
+    min-height: 100vh;
+    min-width: max-content;
+}
+
+.wrapper{
+    width: 450px;
+    padding: 30px;
+    border-radius: 50px;
+    background: #fff;
+    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+
+    backdrop-filter: blur(25px) saturate(200%);
+    -webkit-backdrop-filter: blur(25px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.81);
+    border: 1px solid rgba(209, 213, 219, 0.3);
+  }
+
+  .appdetails{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 32px;
+    font-weight: 600;
+
+  }
+  #logo{
+    width: 150px; 
+  }
+  
+  form p{
+    font-size: 19px;
+    margin-bottom: 5px;
+  }
+
+  form {
+    margin: 40px
+  }
+
+form :where(input, select, button){
+    width: 100%;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+} 
+
+form input{
+    height: 40px;
+    font-size: 17px;
+    padding: 15px;
+    border: 1px solid #999;
+  }
+
+form input:focus{
+    padding: 0 19px;
+    border: 2px solid #675AFE;
+}
+
+form .droplist{
+    display: flex;
+    margin-top: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.droplist .selectbox{
+    display: flex;
+    width: 120px;
+    height: 40px;
+    align-items: center;
+    border-radius: 8px;
+    justify-content: center;
+    border: 1px solid #999;
+    padding-left: 5px;
+  }
+
+  .selectbox img{
+    max-width: 25px;
+  }
+
+  .selectbox select{
+    width: auto;
+    font-size: 17px;
+    background: none;
+    margin: 0 -5px 0 5px;
+  }  
+
+  .droplist .icon{
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 22px;
+  }
+
+  form .exchangerate{
+    font-size: 17px;
+    margin: 18px 0 20px;
+  }
+
+  form button{
+    height: 52px;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    background:orange;
+    transition: 0.3s ease;
+  }
+
+  form button:hover{
+    background: rgb(255, 106, 52);
+  }

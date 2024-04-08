@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script defer src="index.js"></script>
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <div class="appdetails">
+            <img src="./pngwing.com (2).png" id="logo"/>
+            <header>Currency Converter</header>
+        </div>
+        <form action="#">
+            <div class="amount">
+                <p>Amount:</p>
+                <input type="number" value="1">
+            </div>
+            <div class="droplist">
+                <div class="from">
+                    <p>From</p>
+                    <div class="selectbox">
+                        <img src="https://flagcdn.com/48x36/us.png" alt="flag">
+                        <select></select>
+                    </div>
+                </div>
+
+                <div class="to">
+                    <p>to</p>
+                    <div class="selectbox">
+                        <img src="https://flagcdn.com/48x36/ke.png" alt="flag">
+                        <select></select>
+                    </div>
+                </div> 
+            </div>
+            <div class="exchangerate">
+                    Fetching exchange rate ...
+            </div>
+            <button>Convert</button>
+        </form>
+        
+    </div>
+
+</body>
+</html>
