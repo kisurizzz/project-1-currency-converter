@@ -1,0 +1,12 @@
+{
+    "comments":[
+    {
+      "name": "Alice",
+      "comment": "This is a great website!"
+    },
+    {
+        "name": "Bob",
+        "comment": "The content is very informative."
+      }
+]
+}

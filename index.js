@@ -163,9 +163,16 @@ let country_array = {
 document.addEventListener('DOMContentLoaded', function (){
 
 const dropDown = document.querySelectorAll('form select')
-const convertBtn = document.querySelector('button')
+const convertBtn = document.querySelector('#convertbutton')
 const fromDropDown = document.querySelector('.from select')
 const toDropDown = document.querySelector('.to select')
+const submitBtn = document.querySelector('#commentButton')
+
+submitBtn.addEventListener('click', e => {
+    e.preventDefault()
+    addComment()
+})
+
 convertBtn.addEventListener('click', e => {
     e.preventDefault()
     getExchangeRate()
@@ -231,6 +238,8 @@ function getExchangeRate (){
     const baseURL = `https://open.er-api.com/v6/latest/${fromCurrency}`
     console.log(baseURL)
 
+    
+
     if(amount.length != 0){
         fetch(baseURL)
         .then(res => res.json())
@@ -251,7 +260,35 @@ function getExchangeRate (){
     }
 }
 
+function addComment(){
+    let name =  document.querySelector('.comment-box input')
+    let comments = document.querySelector('.comment-box textarea')
+    let nameValue = name.value
+    let commentsValue = comments.value
+    
+    console.log(nameValue)
+    console.log(commentsValue)
+
+    fetch('', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            'name': nameValue,
+            'comment': commentsValue
+            })
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+
+}
 
 
 
 })
+
+
+
+
