@@ -180,6 +180,7 @@ convertBtn.addEventListener('click', e => {
 
 window.addEventListener('load', () => {
     getExchangeRate()
+    fetchComments()
 })
 
 const toCountry = toDropDown.value;
@@ -260,6 +261,8 @@ function getExchangeRate (){
     }
 }
 
+
+
 function addComment(){
     let name =  document.querySelector('.comment-box input')
     let comments = document.querySelector('.comment-box textarea')
@@ -269,7 +272,7 @@ function addComment(){
     console.log(nameValue)
     console.log(commentsValue)
 
-    fetch('', {
+    fetch('http://localhost:3000/comments', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -281,9 +284,61 @@ function addComment(){
             })
     })
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => {
+        console.log(data)
+        name.value = ''; // Clear comment form after submission
+        comments.value = '';
+        fetchComments()
+      })
+      .catch(error => {
+        console.error('Error submitting comment:', error);
+        // Handle errors appropriately (e.g., display an error message)
+        
+    })
 
 }
+
+
+
+
+
+
+function fetchComments() {
+    fetch('http://localhost:3000/comments') // Replace with your actual endpoint
+      .then(response => response.json())
+      .then(comments => {
+        displayComments(comments); // Call function to display comments
+      })
+      .catch(error => {
+        console.error('Error fetching comments:', error);
+        // Handle errors appropriately (e.g., display an error message)
+      });
+  }
+    
+
+
+
+function displayComments(comments) {
+    const commentRecords = document.querySelector('.commentrecords');
+    commentRecords.innerHTML = ''; // Clear existing comments
+  
+    comments.forEach(comment => {
+      const commentElement = document.createElement('div');
+      commentElement.classList.add('indivdualcomments');
+  
+      const commentName = document.createElement('h4');
+      commentName.textContent = comment.name + ' says:';
+  
+      const commentText = document.createElement('p');
+      commentText.textContent = comment.comment;
+  
+      commentElement.appendChild(commentName);
+      commentElement.appendChild(commentText);
+  
+      commentRecords.appendChild(commentElement);
+    });
+  }
+  
 
 
 

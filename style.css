@@ -200,4 +200,18 @@ form .droplist{
     background: #718a8e;
   }
 
+  .commentrecords h4{
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .commentrecords p{
+    font-size: 11px;
+    margin-top: 0;
+  }
  
+.commentrecords{
+  display: flex;
+  flex-direction: ;
+  
+}
