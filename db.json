@@ -7,7 +7,7 @@
     },
     {
       "name": "Bob",
-      "comment": "The content is very informative.",
+      "comment": "The web app is very effecient.",
       "id": "1123"
     },
     {
@@ -24,16 +24,6 @@
       "id": "abe3",
       "name": "Lucky Dube",
       "comment": "Fantastic work"
-    },
-    {
-      "id": "2512",
-      "name": "Kisuri",
-      "comment": "nicee"
-    },
-    {
-      "id": "f161",
-      "name": "Teryy Herii",
-      "comment": "verrryy naaiisss"
     }
   ]
 }

@@ -203,6 +203,7 @@ form .droplist{
   .commentrecords h4{
     font-size: 14px;
     margin-bottom: 0;
+    font-weight: 550;
   }
 
   .commentrecords p{
@@ -212,6 +213,10 @@ form .droplist{
  
 .commentrecords{
   display: flex;
-  flex-direction: ;
-  
+  flex-direction: column-reverse;
+  background-color: aliceblue;
+  width: 400px;
+  border-radius: 10px;
+  padding: 15px;
+  margin-left: 10px;
 }
