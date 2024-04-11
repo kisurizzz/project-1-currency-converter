@@ -384,14 +384,6 @@ function displayComments(comments) { //displays comments and names
   }
 
 
-
-
-
-
-  
-
-
-
 })
 
 
