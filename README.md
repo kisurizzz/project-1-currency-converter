@@ -41,11 +41,8 @@ This is a currency converter with a user comment section. Users can:
       json-server --watch db.json
     ```
 
-5. Run the application using
+5. Run the application using live server
 
-    ```bash
-      node index.js
-    ```
 
 ## Technologies Used
 
