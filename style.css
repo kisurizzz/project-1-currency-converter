@@ -186,7 +186,7 @@ form .droplist{
     border: 1px solid #86b0b6;
   }
 
-  .comment-box button{
+  #commentButton{
     cursor: pointer;
     padding: 10px 30px;
     font-size: 18px;
@@ -221,7 +221,27 @@ form .droplist{
   margin-left: 10px;
   margin-bottom: 20px;
 }
-.commentrecords button{
+/* .commentrecords button{
   border-radius: 15px;
   transition: 0.3s ease;
+  height: 10px;
+  font-size: 7px;
+  width: 15px;
+  text-align: center;
+  cursor: pointer;
+  
+} */
+
+.delete-comment-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  background-color: rgb(255, 106, 52);
+  border-radius: 15px;
+  font-size: 10px;
+  height: 17px;
+  cursor: pointer;
+  transition: 0.3s ease;
+
 }

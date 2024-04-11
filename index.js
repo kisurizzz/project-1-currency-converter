@@ -338,7 +338,7 @@ function displayComments(comments) {
   
       commentElement.appendChild(commentName);
       commentElement.appendChild(commentText);
-      commentElement.appendChild(deleteBtn);
+      commentName.appendChild(deleteBtn);
   
       commentRecords.appendChild(commentElement);
     });
