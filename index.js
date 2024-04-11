@@ -327,6 +327,7 @@ function displayComments(comments) {
     comments.forEach(comment => {
       const commentElement = document.createElement('div');
       commentElement.classList.add('indivdualcomments');
+      commentElement.dataset.commentId = comment.id;
   
       const commentName = document.createElement('h4');
       commentName.textContent = comment.name + ' says:';
@@ -334,7 +335,6 @@ function displayComments(comments) {
       const deleteBtn = document.createElement('button');
       deleteBtn.classList.add('delete-comment-btn')
       deleteBtn.textContent = 'Remove';
-      deleteBtn.id = `delete-comment-btn-${comment.id}`
   
       const commentText = document.createElement('p');
       commentText.textContent = comment.comment;
@@ -346,14 +346,42 @@ function displayComments(comments) {
       commentRecords.appendChild(commentElement);
     });
 
-
-   
-
-
   }
 
 
+  const commentRecords = document.querySelector('.commentrecords');
+    commentRecords.addEventListener('click', function (event) {
+        if (event.target.classList.contains('delete-comment-btn')) {
+            const commentId = event.target.closest('.indivdualcomments').dataset.commentId;
+            deleteComment(commentId);
+        }
+    });
 
+  
+    function deleteComment(commentId) {
+      fetch(`http://localhost:3000/comments/${commentId}`, {
+          method: 'DELETE'
+      })
+          .then(response => {
+              if (response.ok) {
+                  console.log('Comment deleted successfully');
+                  // Remove comment element from DOM
+                  const commentElement = document.querySelector(`.indivdualcomments[data-comment-id="${commentId}"]`);
+                  if (commentElement) {
+                      commentElement.remove();
+                  } else {
+                      console.warn('Comment element not found for ID:', commentId);
+                  }
+              } else {
+                  console.error('Error deleting comment:', response.statusText);
+                  // Handle errors appropriately (e.g., display an error message)
+              }
+          })
+          .catch(error => {
+              console.error('Error deleting comment:', error);
+              // Handle network errors
+          });
+  }
 
 
 
