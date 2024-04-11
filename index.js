@@ -328,16 +328,38 @@ function displayComments(comments) {
   
       const commentName = document.createElement('h4');
       commentName.textContent = comment.name + ' says:';
+
+      const deleteBtn = document.createElement('button');
+      deleteBtn.classList.add('delete-comment-btn')
+      deleteBtn.textContent = 'Remove';
   
       const commentText = document.createElement('p');
       commentText.textContent = comment.comment;
   
       commentElement.appendChild(commentName);
       commentElement.appendChild(commentText);
+      commentElement.appendChild(deleteBtn);
   
       commentRecords.appendChild(commentElement);
     });
   }
+
+
+
+  // function deleteComment (){
+  //   let deleteBtn = document.createElement('button')
+  //   deleteBtn.classList.add()
+  //   deleteBtn.addEventListener('click', () => fetch('http://localhost:3000/comments', {
+  //     method: 'DELETE',
+  //     headers: {
+  //       'Content-type': 'application/json'
+  //     },
+  //     body: JSON.stringify({
+  //       'name': 
+  //     })
+
+  //   }))
+  // }
   
 
 
