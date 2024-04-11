@@ -294,7 +294,7 @@ function addComment(){
       })
       .catch(error => {
         console.error('Error submitting comment:', error);
-        // Handle errors appropriately (e.g., display an error message)
+        
         
     })
 
@@ -306,21 +306,21 @@ function addComment(){
 
 
 function fetchComments() {
-    fetch('http://localhost:3000/comments') // Replace with your actual endpoint
+    fetch('http://localhost:3000/comments') // comments' endpoint
       .then(response => response.json())
       .then(comments => {
         displayComments(comments); // Call function to display comments
       })
       .catch(error => {
         console.error('Error fetching comments:', error);
-        // Handle errors appropriately (e.g., display an error message)
+        
       });
   }
     
 
 
 
-function displayComments(comments) {
+function displayComments(comments) { //displays comments and names 
     const commentRecords = document.querySelector('.commentrecords');
     commentRecords.innerHTML = ''; // Clear existing comments
   
@@ -374,7 +374,7 @@ function displayComments(comments) {
                   }
               } else {
                   console.error('Error deleting comment:', response.statusText);
-                  // Handle errors appropriately (e.g., display an error message)
+                
               }
           })
           .catch(error => {
