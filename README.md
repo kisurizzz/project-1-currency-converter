@@ -1,6 +1,7 @@
 # Currency Converter
 
-JavaScript Console Application That Extracts a Name From an Email, OCTOBER 06 2023
+a simple web app that uses an API to convert currencies.
+ April 11 2024
 
 By **Arnold Kisuri**
 
@@ -16,7 +17,7 @@ This is a currency converter with a user comment section. Users can:
 
 ### Requirements
 
-* A computer with a bash terminal and node installed.
+* A computer with a terminal and node installed.
 * Access to the internet.
 * json server
 
@@ -25,19 +26,19 @@ This is a currency converter with a user comment section. Users can:
 1. Clone this repository using
 
     ```bash
-      git clone git@github.com:dennis-kiboi/email-extractor.git
+      git clone git@github.com:kisurizzz/project-1-currency-converter.git
     ```
 
     or by downloading a ZIP file of the code.
   
 2. The repository, if downloaded as a .zip file will need to be extracted to your preferred location.
 
-3. Navigate to the project folder on your bash terminal.
+3. Navigate to the project folder on your terminal.
 
-4. Install dependancies using
+4. Run the local server
 
     ```bash
-      npm install
+      json-server --watch db.json
     ```
 
 5. Run the application using
@@ -48,19 +49,20 @@ This is a currency converter with a user comment section. Users can:
 
 ## Technologies Used
 
-* JS
-* Node Runtime Environment
+* HTML
+* CSS
+* JavaScript
 
 ## Support and Contact Details
 
 Incase of any query, need for collaboration or issues with this code, feel free to reach me at
-<dennis.kiboi@moringaschool.com>
+<arnold.kisuri@student.moringaschool.com>
 
 ## License
 
 MIT License
 
-Copyright &copy; 2023 Dennis Kiboi
+Copyright &copy; 2024 Arnold Kisuri
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
