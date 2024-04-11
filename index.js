@@ -183,6 +183,8 @@ window.addEventListener('load', () => {
     fetchComments()
 })
 
+
+
 const toCountry = toDropDown.value;
   getFlags(toDropDown, toCountry); // Pass both element and selected value
 
@@ -332,34 +334,32 @@ function displayComments(comments) {
       const deleteBtn = document.createElement('button');
       deleteBtn.classList.add('delete-comment-btn')
       deleteBtn.textContent = 'Remove';
+      deleteBtn.id = `delete-comment-btn-${comment.id}`
   
       const commentText = document.createElement('p');
       commentText.textContent = comment.comment;
   
       commentElement.appendChild(commentName);
       commentElement.appendChild(commentText);
-      commentName.appendChild(deleteBtn);
+      commentElement.appendChild(deleteBtn);
   
       commentRecords.appendChild(commentElement);
     });
+
+
+   
+
+
   }
 
 
 
-  // function deleteComment (){
-  //   let deleteBtn = document.createElement('button')
-  //   deleteBtn.classList.add()
-  //   deleteBtn.addEventListener('click', () => fetch('http://localhost:3000/comments', {
-  //     method: 'DELETE',
-  //     headers: {
-  //       'Content-type': 'application/json'
-  //     },
-  //     body: JSON.stringify({
-  //       'name': 
-  //     })
 
-  //   }))
-  // }
+
+
+
+
+
   
 
 
