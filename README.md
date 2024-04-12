@@ -13,6 +13,10 @@ This is a currency converter with a user comment section. Users can:
 * Add comments with their name and text, which are saved to a server and displayed on the page.
 * Remove individual comments they've submitted.
 
+the live link is as below;
+
+<https://kisurizzz.github.io/project-1-currency-converter/>
+
 ## How to Use
 
 ### Requirements
