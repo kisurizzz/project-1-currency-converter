@@ -221,16 +221,7 @@ form .droplist{
   margin-left: 10px;
   margin-bottom: 20px;
 }
-/* .commentrecords button{
-  border-radius: 15px;
-  transition: 0.3s ease;
-  height: 10px;
-  font-size: 7px;
-  width: 15px;
-  text-align: center;
-  cursor: pointer;
-  
-} */
+
 
 .delete-comment-btn{
   display: flex;
